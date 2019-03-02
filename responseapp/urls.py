@@ -7,6 +7,7 @@ from responseapp import views as responseapp_views
 urlpatterns = [
 
  path('response/', responseapp_views.responseform),
+ path('prediction-Cloth/',responseapp_views.responseform),
  path('thankyou/', responseapp_views.responseform),
 
 path('', admin.site.urls),

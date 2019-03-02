@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+os.path.dirname(os.path.join(os.path.abspath(__file__),'media'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -100,6 +100,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MEDIA_ROOT='<PROJECT_PATH>/media'
+MEDIA_URL='/media'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -114,8 +116,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 
+STATIC_URL = '/static/' # You may find this is already defined as such.
+
+STATICFILES_DIRS = (
+    STATIC_PATH,'images'
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+

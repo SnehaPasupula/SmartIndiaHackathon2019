@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  border-radius: 50%;
+}
+div.marg1 {
+
+  margin-left:350px;
+}
+div.space {
+  padding-left: 50px;
+}
+#l2
+{
+height:1240px;
+left:300px;
+width:600px;
+display:inline-block;
+background-color:powderblue;
+}
+td.place{
+padding:70px;
+}
+
+</style>
+</head>
+<body>
+<center><h1>Impacts due to Cloth Wastage</h1></center>
+
+  <div align="center">
+   <table>
+  
+    <tr>
+    <td><img src="{% static "images/co2.jpg" %}" alt="Avatar" style="width:100px"></td>
+    <td class="place">{{val1}}</td>
+  </tr>
+    <tr>
+    <td><img src="{% static "images/methane.jpg" %}" style="width:100px"></td>
+    <td class="place">{{val2}}</td>
+  </tr>
+  <tr>
+    <td ><img src="{% static "images/no2.jpg" %}" style="width:100px"></td>
+    <td  class="place">{{val3}}</td>
+  </tr>
+   <tr>
+    <td><img src="{% static "images/recycle.jpg" %}" style="width:100px"></td>
+    <td  class="place">{{val3}}</td>
+  </tr>
+  <tr>
+    <td><img src="{% static "images/discard.jpg" %}"  alt="Avatar" style="width:100px"></td>
+    <td class="place">{{val5}}</td>
+  </tr>
+  <tr>
+    <td ><img src="{% static "images/incinerate.jpg" %}" alt="Avatar" style="width:100px"></td>
+    <td class="place">{{val6}}</td>
+  </tr>
+  <tr>
+    <td ><img src="{% static "images/waste.jpg" %}" alt="Avatar" style="width:100px"></td>
+    <td class="place">{{val7}}</td>
+  </tr>
+  <tr>
+    <td ><img src="{% static "images/temperature.jpg" %}" alt="Avatar" style="width:100px"></td>
+    <td class="place">{{val8}}</td>
+  </tr>
+  </table>
+  <a href="C:\Users\Praneeth\Desktop\DjangoFormsBasics\co2.html">Vizualise</a>
+</div>
+</div>
+</body>

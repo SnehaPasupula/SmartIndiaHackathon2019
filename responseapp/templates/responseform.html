@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
+  
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -70,9 +72,16 @@ body {
   float:left;
 }
 
+img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
+
 </style>
 </head>
 <body>
+
 <script>
   function func(k)
   {
@@ -93,7 +102,7 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="cloth.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/cloth.jpg" %}" alt="Avatar" \>
     </div>
     <div class="flip-card-back">
       <h1>Clothes</h1> 
@@ -112,7 +121,7 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="electronics.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/electronics.jpg" %}"alt="Avatar">
     </div>
     <div class="flip-card-back">
       <h1>Electronics</h1> 
@@ -131,7 +140,7 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="paper.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/paper.jpg" %}" alt="Avatar" >
     </div>
     <div class="flip-card-back">
       <h1>Paper</h1> 
@@ -150,7 +159,7 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="dryration.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/dryration.jpg" %}" alt="Avatar" style="width:293px;height:293px;">
     </div>
     <div class="flip-card-back">
       <h1>Dry Ration</h1> 
@@ -170,7 +179,7 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="school.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/schoolmaterial.jpg" %}"alt="Avatar" style="width:100%;height:100%;">
     </div>
     <div class="flip-card-back">
       <h1>School Material</h1>
@@ -184,12 +193,12 @@ body {
 </div>
 </div>
 </button>
-<button onclick="func('Foot_wear')">
+<button onclick="func('Foot_wear')" style="border-radius: 2px;">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="footwear.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/footwear.jpg" %}"alt="Avatar" style="width:100%;height:100%;">
     </div>
     <div class="flip-card-back">
          <h1>Foot wear</h1>
@@ -205,10 +214,10 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="school.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/utensils.jpg" %}"alt="Avatar" style="width:100%;height:100%;"></img>
     </div>
     <div class="flip-card-back">
-      <h1>School Material</h1>
+      <h1>Utensils</h1>
       <p>Black board</p>
       <p>School Bags</p>
       <p>Lunch box</p>
@@ -224,10 +233,10 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="footwear.jpg" alt="Avatar" style="width:293px;height:293px;">
+      <img src="{% static "images/toys.jpg" %}"alt="Avatar" style="width:100%;height:100%;"">
     </div>
     <div class="flip-card-back">
-         <h1>Foot wear</h1>
+         <h1>Toys and dolls</h1>
       <p>Of all size</p>
       <p>left & right tied together</p>   
     </div>
@@ -238,8 +247,9 @@ body {
 </div>
 </div>
 <div id="main1">
-  <form action="/thankyou/" method="post">
+  <form action="/prediction-Cloth/" method="post">
     {% csrf_token %}
+    <label>Type of Material: </label>
     <input type="text" value=" " name="type1" id="abc"/>
     <table>
     {{form.as_table}}
@@ -247,6 +257,9 @@ body {
  </table>
 <input type="submit" value="Submit" />
 </form>
+</div>
+<div>
+  <img src="school.jpg">
 </div>
 </body>
 </html>
