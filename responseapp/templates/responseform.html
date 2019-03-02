@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#main{
+ 
+  top:10px;
+  height:900px;
+  display:block;
+}
+#main1{
+  background-color:cyan;
+  top:910px;
+  height:900px;
+  display:none;
+}
+.flip-card {
+  background-color: transparent;
+  width: 293px;
+  height: 293px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.row {
+  display: flex;
+  float:left;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex:33.33%;
+  padding: 10px;
+  float:left;
+}
+
+</style>
+</head>
+<body>
+<script>
+  function func(k)
+  {
+  var v=k;
+  console.log(v);
+  document.getElementById("main1").style.display="block";
+  window.scrollTo(0,910);
+  document.getElementById("abc").value=v;
+}
+</script>
+<div id="main">
+<div class="c"><center><h1 style="font-family:cursive;font-size:50px">Paryavaran</h1></center></div>
+
+
+<div class="row">
+  <button onclick="func('Clothes')">
+  <div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="cloth.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Clothes</h1> 
+      <p>Saree</p>
+      <p>Salwar/Suit</p>
+      <p>Shirts</p>
+      <p>Bed-sheets</p>
+      <p>Trousers</p>
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func('Electronics')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="electronics.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Electronics</h1> 
+      <p>Laptop</p>
+      <p>Computer</p>
+      <p>Printer</p>
+      <p>Fan</p>
+      <p>Photocopier</p>
+  </div>
+</div>
+</div>
+</div>
+</button>
+<button onclick="func('Paper')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="paper.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Paper</h1> 
+      <p>Newspapers</p>
+      <p>Magazines</p>
+      <p>Drawing Sheets</p>
+      <p>Old brochures</p>
+      <p>Newsletters</p>
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func('Dry Ration')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="dryration.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Dry Ration</h1> 
+      <p>Pulses</p>
+      <p>Rice</p>
+      <p>Spices</p>
+      <p>Sugar</p>
+      <p>Tea-leaves</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</button>
+<button onclick="func('Schoool_material')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="school.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>School Material</h1>
+      <p>Black board</p>
+      <p>School Bags</p>
+      <p>Lunch box</p>
+      <p>Stationery</p>
+      <p>Books</p> 
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func('Foot_wear')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="footwear.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+         <h1>Foot wear</h1>
+      <p>Of all size</p>
+      <p>left&right tied together</p>   
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func(Schoool_material)">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="school.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>School Material</h1>
+      <p>Black board</p>
+      <p>School Bags</p>
+      <p>Lunch box</p>
+      <p>Stationery</p>
+      <p>Books</p> 
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func('Foot_wear')">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="footwear.jpg" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+         <h1>Foot wear</h1>
+      <p>Of all size</p>
+      <p>left & right tied together</p>   
+    </div>
+  </div>
+</div>
+</div>
+</button>
+</div>
+</div>
+<div id="main1">
+  <form action="/thankyou/" method="post">
+    {% csrf_token %}
+    <input type="text" value=" " name="type1" id="abc"/>
+    <table>
+    {{form.as_table}}
+
+ </table>
+<input type="submit" value="Submit" />
+</form>
+</div>
+</body>
+</html>
