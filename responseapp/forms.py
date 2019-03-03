@@ -32,15 +32,18 @@ YEAR_CHOICES=[
         (2014,2014),
         (2015,2015),
         (2016,2016),
-        (2017,2017)
+        (2017,2017),
+        (2018,2018),
+        (2019,2019),
+        (2020,2020)
 
     ]
 list1=[[]]
 class MyForm(forms.Form):
  year1 = forms.IntegerField(widget=forms.Select(choices=YEAR_CHOICES),required=False)
- quantity1 = forms.IntegerField(label='Quantity',required=False)
+ quantity1 = forms.IntegerField(label='Quantity')
  metric1= forms.CharField(widget=forms.Select(choices=METRIC_CHOICES),required=False)
- year2 = forms.IntegerField(widget=forms.Select(choices=YEAR_CHOICES),required=False)
+ """year2 = forms.IntegerField(widget=forms.Select(choices=YEAR_CHOICES),required=False)
  quantity2 = forms.IntegerField(label='end year',required=False)
  metric2= forms.CharField(widget=forms.Select(choices=METRIC_CHOICES),required=False)
  year3 = forms.IntegerField(widget=forms.Select(choices=YEAR_CHOICES),required=False)
@@ -52,6 +55,7 @@ class MyForm(forms.Form):
  year5 = forms.IntegerField(widget=forms.Select(choices=YEAR_CHOICES),required=False)
  quantity5 = forms.IntegerField(label='end year',required=False)
  metric5= forms.CharField(widget=forms.Select(choices=METRIC_CHOICES),required=False)
+ """
  
 
 

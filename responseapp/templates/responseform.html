@@ -8,6 +8,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.button{
+  border-radius: 50%;
+}
+img{
+border-radius:100%;
+}
 #main{
  
   top:10px;
@@ -15,7 +21,7 @@ body {
   display:block;
 }
 #main1{
-  background-color:cyan;
+  background-color:transparent;
   top:910px;
   height:900px;
   display:none;
@@ -46,6 +52,7 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+    border-radius:75%;
 }
 
 .flip-card-front {
@@ -79,30 +86,129 @@ img {
 }
 
 </style>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+
 </head>
 <body>
-
 <script>
   function func(k)
   {
-  var v=k;
-  console.log(v);
+  
+ 
+ var b=["School_material","Paper","Electronics","Clothes","Toys","Utensils","Foot_wear","dryration"];
   document.getElementById("main1").style.display="block";
+  var v=b[k-1];
   window.scrollTo(0,910);
+  console.log(b[k-1]);
   document.getElementById("abc").value=v;
+  if(v=='School_material')
+  {
+  console.log("ok");
+  document.getElementById("School_material").style.display="";
+  document.getElementById("Paper").style.display="none";
+  document.getElementById("Electronics").style.display="none";
+   document.getElementById("Clothes").style.display="none";
+   document.getElementById("dryration").style.display="none";
+  console.log("ok1");
+  }
+  else if(v=='Paper')
+  {
+  console.log("ok");
+  document.getElementById("Paper").style.display="";
+  document.getElementById("School_material").style.display="none";
+  document.getElementById("Electronics").style.display="none";
+   document.getElementById("Clothes").style.display="none";
+   document.getElementById("dryration").style.display="none";
+  console.log("ok1");
+  }
+  else if(v=='Electronics')
+  {
+  console.log("ok");
+  document.getElementById("Paper").style.display="none";
+  document.getElementById("School_material").style.display="none";
+  document.getElementById("Electronics").style.display="";
+   document.getElementById("Clothes").style.display="none";
+   document.getElementById("dryration").style.display="none";
+  console.log("ok1");
+  }
+  else if(v=='Clothes')
+  {
+  console.log("ok");
+  document.getElementById("Paper").style.display="none";
+  document.getElementById("dryration").style.display="none";
+  document.getElementById("School_material").style.display="none";
+  document.getElementById("Electronics").style.display="none";
+  document.getElementById("Clothes").style.display="";
+  console.log("ok1");
+  }
+  else if(v=='dryration')
+  {
+  console.log("ok");
+  document.getElementById("dryration").style.display="";
+  document.getElementById("Paper").style.display="none";
+  document.getElementById("School_material").style.display="none";
+  document.getElementById("Electronics").style.display="none";
+  document.getElementById("Clothes").style.display="none";
+  console.log("ok1");
+  }
+      
+ 
 }
+
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("select.country").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        
+        $("#asd").val(selectedCountry);
+    });
+});
+
 </script>
 <div id="main">
 <div class="c"><center><h1 style="font-family:cursive;font-size:50px">Paryavaran</h1></center></div>
 
-
+<ul>
+  <li><a href="{% static "images/home.html" %}">Home</a></li>
+  <li><a class="active" >Check Impact</a></li>
+  <li><a href="{% static "images/about.html" %}">About</a></li>
+  <li><a href="{% static "images/response.html" %}">Resources</a></li>
+  
+</ul>
 <div class="row">
-  <button onclick="func('Clothes')">
+  <button onclick="func(4)">
   <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="{% static "images/cloth.jpg" %}" alt="Avatar" \>
+      <img src="{% static "images/cloth.jpg" %}" alt="Avatar">
     </div>
     <div class="flip-card-back">
       <h1>Clothes</h1> 
@@ -116,12 +222,12 @@ img {
 </div>
 </div>
 </button>
-<button onclick="func('Electronics')">
+<button onclick="func(3)">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="{% static "images/electronics.jpg" %}"alt="Avatar">
+      <img src="{% static "images/electronics.jpg" %}" alt="Avatar">
     </div>
     <div class="flip-card-back">
       <h1>Electronics</h1> 
@@ -135,7 +241,7 @@ img {
 </div>
 </div>
 </button>
-<button onclick="func('Paper')">
+<button onclick="func(2)">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -154,7 +260,7 @@ img {
 </div>
 </div>
 </button>
-<button onclick="func('Dry Ration')">
+<button onclick="func(8)">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -174,73 +280,74 @@ img {
 </div>
 </div>
 </button>
-<button onclick="func('Schoool_material')">
+
+ <button onclick="func(7)">
+  <div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{% static "images/footwear.jpg" %}" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Footwear</h1> 
+      <p>of all sizes</p>
+      <p> (left and right tired together)</p>
+    </div>
+  </div>
+</div>
+</div>
+</button>
+<button onclick="func(1)">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="{% static "images/schoolmaterial.jpg" %}"alt="Avatar" style="width:100%;height:100%;">
+      <img src="{% static "images/school.jpg" %}"alt="Avatar" style="width:293px;height:293px;">
     </div>
     <div class="flip-card-back">
-      <h1>School Material</h1>
-      <p>Black board</p>
+      <h1>School Material</h1> 
       <p>School Bags</p>
-      <p>Lunch box</p>
-      <p>Stationery</p>
-      <p>Books</p> 
+      <p>Water</p>
+      <p>Printer</p>
+      <p>Fan</p>
+      <p>Photocopier</p>
+  </div>
+</div>
+</div>
+</div>
+</button>
+<button onclick="func(5)">
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{% static "images/toys (1).jpg" %}" alt="Avatar" style="width:293px;height:293px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Toys And Games</h1> 
+     <p>
+      for setting up
+     </p>
+     <p>activity Centres</p>
     </div>
   </div>
 </div>
 </div>
 </button>
-<button onclick="func('Foot_wear')" style="border-radius: 2px;">
+<button onclick="func(6)">
 <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="{% static "images/footwear.jpg" %}"alt="Avatar" style="width:100%;height:100%;">
+      <img src="{% static "images/utensils.jpg" %}" alt="Avatar" style="width:293px;height:293px;">
     </div>
     <div class="flip-card-back">
-         <h1>Foot wear</h1>
-      <p>Of all size</p>
-      <p>left&right tied together</p>   
+      <h1>Utensils</h1> 
+      <p>Of all kinds</p>
+      
     </div>
   </div>
 </div>
-</div>
-</button>
-<button onclick="func(Schoool_material)">
-<div class="column">
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="{% static "images/utensils.jpg" %}"alt="Avatar" style="width:100%;height:100%;"></img>
-    </div>
-    <div class="flip-card-back">
-      <h1>Utensils</h1>
-      <p>Black board</p>
-      <p>School Bags</p>
-      <p>Lunch box</p>
-      <p>Stationery</p>
-      <p>Books</p> 
-    </div>
-  </div>
-</div>
-</div>
-</button>
-<button onclick="func('Foot_wear')">
-<div class="column">
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="{% static "images/toys.jpg" %}"alt="Avatar" style="width:100%;height:100%;"">
-    </div>
-    <div class="flip-card-back">
-         <h1>Toys and dolls</h1>
-      <p>Of all size</p>
-      <p>left & right tied together</p>   
-    </div>
-  </div>
 </div>
 </div>
 </button>
@@ -250,16 +357,53 @@ img {
   <form action="/prediction-Cloth/" method="post">
     {% csrf_token %}
     <label>Type of Material: </label>
-    <input type="text" value=" " name="type1" id="abc"/>
-    <table>
-    {{form.as_table}}
+    <select id="Electronics" class="country" style="display: none;">
+    <option value="item0">--Select an Item--</option>
+    <option value="Printer">Printer</option>
+    <option value="Laptop">Laptop</option>
+    <option value="Computer">Computer</option>
+  </select>
+ <select id="School_material"class="country"style="display: none;">
+    <option value="item0">--Select an Item--</option>
+    <option value="school_bags">school_bags</option>
+    <option value="Lunch">Lunch</option>
+    <option value="Stationery">Stationery</option>
+  </select>
+ <select id="Clothes"class="country"style="display: none;">
+    <option value="">--Select an Item--</option>
+    <option value="Cotton">Cotton</option>
+    <option value="Polyster">Polyster</option>
+    <option value="Nylon">Nylon</option>
+    <option value="Acroylic">Acroylic</option>
+  </select>
+ <select id="Paper"class="country"style="display: none;">
+    <option value="item0">--Select an Item--</option>
+    <option value="Newsletters">newsletters</option>
+    <option value="Envelopes">envelopes</option>
+    <option value="Magazines">magazines</option>
+  </select>
+   <select id="dryration"class="country"style="display: none;">
+    <option value="item0">--Select an Item--</option>
+    <option value="Pulses">pulses</option>
+    <option value="rice">rice</option>
+    <option value="Sugar">sugar</option>
+  </select>
+   <select id="Paper"class="country"style="display: none;">
+    <option value="item0">--Select an Item--</option>
+    <option value="Newsletters">newsletters</option>
+    <option value="Envelopes">envelopes</option>
+    <option value="Magazines">magazines</option>
+  </select>
+<input type="hidden" name="type2" value=" " id="asd">
+    <input type="text" value=" " name="type1" id="abc"/ readonly="">
+    <table align="center">
+
+    {{form.as_p}}
 
  </table>
 <input type="submit" value="Submit" />
 </form>
 </div>
-<div>
-  <img src="school.jpg">
-</div>
+
 </body>
 </html>

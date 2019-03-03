@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  border-radius: 50%;
+}
+div.marg1 {
+
+  margin-left:350px;
+}
+div.space {
+  padding-left: 50px;
+}
+#l2
+{
+height:1240px;
+left:300px;
+width:600px;
+display:inline-block;
+background-color:powderblue;
+}
+td.place{
+padding:70px;
+}
+
+</style>
+</head>
+<body>
+<center><h1>Impacts due to Cloth Wastage</h1></center>
+
+<h2>Your Data is :</h2>
+<table>
+  <tr>
+    <td>
+      
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+</table>
+  <div >
+   <table>
+  
+    <tr>
+    <td><img src="{% static "images/co2.jpg" %}" style="width:100px"></td>
+    <td class="place">{{hira}} Kgs</td>
+ 
+  
+    <td><img src="{% static "images/methane.jpg" %}" style="width:100px"></td>
+    <td class="place">{{val2}} Kgs</td>
+ 
+    <td ><img src="{% static "images/no2.jpg" %}" style="width:100px"></td>
+    <td  class="place">{{val3}} Kgs</td>
+  </tr>
+  <tr>
+    <td><img src="{% static "images/so2.jpg" %}" style="width:100px"></td>
+    <td  class="place">{{val4}} Kgs</td>
+  
+    
+  </tr>
+
+  </table>
+  <button style="width: 42px;height: 100%;"><a href="{%static "images/paperplot.html"%}"  style="float: left;">Vizualise</a></button>
+</div>
+</div>
+</body>
